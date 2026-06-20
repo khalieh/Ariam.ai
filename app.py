@@ -6,8 +6,10 @@ st.title("🤖 Chat with Ariam")
 st.write("Welcome to Ariam's official home on the internet! Type a message below to start talking.")
 
 # 2. Add your secret API key safely
-API_KEY = "AQ.Ab8RN6IS-iZsNPr-O_hZjzWPEvbWcPv_vHiCnYcsokItflUVEg"
+import os
+API_KEY = os.environ.get("GEMINI_API_KEY")
 genai.configure(api_key=API_KEY)
+
 
 # 3. Create the chat system memory
 if "messages" not in st.session_state:
